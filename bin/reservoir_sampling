@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'reservoir_sampling'
+
+file_name = ARGV[0]
+reservoir_size = ARGV[1].to_i
+
+unless File.exist? file_name
+  puts "#{file_name} does not exist, generating it with 5000000 lines ..."
+  ReservoirSampling::InputGenerator::file_gen(file_name, 5000000)
+end
+
+reservoir = ReservoirSampling::sample(file_name, reservoir_size)
+
+puts "reservoir:" + reservoir.to_s
