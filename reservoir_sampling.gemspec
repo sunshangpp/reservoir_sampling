@@ -13,5 +13,5 @@ Gem::Specification.new do |s|
   s.license     = 'SSUN'
 
   s.test_files = ['test/test_reservoir.rb']
-  s.default_executable = ['reservoir_sampling']
+  s.executables = ['reservoir_sampling']
 end
